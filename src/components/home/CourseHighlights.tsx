@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Cloud, Database, Server, Code, Brain, Users } from 'lucide-react';
+import { Cloud, Database, Server, Code, Brain, Users, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const courseData = [
