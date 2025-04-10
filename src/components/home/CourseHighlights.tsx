@@ -79,7 +79,7 @@ const CourseHighlights = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courseData.map((course) => (
-            <Link to="/courses" key={course.id}>
+            <Link to={`/courses/${course.id}`} key={course.id}>
               <Card className="card-hover h-full">
                 <CardContent className="p-6 h-full flex flex-col">
                   <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${course.color} text-white flex items-center justify-center mb-4`}>

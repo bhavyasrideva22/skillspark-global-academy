@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -223,9 +224,11 @@ const Courses = () => {
                             </div>
                           )}
                         </div>
-                        <Button className="w-full bg-brand-purple">
-                          Apply Now <ChevronRight size={16} className="ml-1" />
-                        </Button>
+                        <Link to={`/courses/${course.id}`}>
+                          <Button className="w-full bg-brand-purple">
+                            View Details <ChevronRight size={16} className="ml-1" />
+                          </Button>
+                        </Link>
                       </div>
                     </CardContent>
                   </Card>
