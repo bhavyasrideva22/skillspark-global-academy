@@ -2,7 +2,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,6 +33,31 @@ const Navbar = () => {
           <Link to="/courses" className="text-gray-700 hover:text-brand-purple font-medium">Courses</Link>
           <Link to="/hackathons" className="text-gray-700 hover:text-brand-purple font-medium">Hackathons</Link>
           <Link to="/corporate" className="text-gray-700 hover:text-brand-purple font-medium">Corporate</Link>
+          
+          {/* Blog Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="text-gray-700 hover:text-brand-purple font-medium flex items-center gap-1 focus:outline-none">
+              Blog <ChevronDown size={16} />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem asChild>
+                <Link to="/blog" className="w-full">All Articles</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/blog?category=tech-trends" className="w-full">Tech Trends</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/blog?category=tutorials" className="w-full">Tutorials</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/blog?category=career" className="w-full">Career Advice</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/blog?category=success-stories" className="w-full">Success Stories</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          
           <Link to="/about" className="text-gray-700 hover:text-brand-purple font-medium">About Us</Link>
           <Link to="/contact" className="text-gray-700 hover:text-brand-purple font-medium">Contact</Link>
         </nav>
@@ -50,6 +81,18 @@ const Navbar = () => {
             <Link to="/courses" className="text-gray-700 hover:text-brand-purple font-medium py-2" onClick={toggleMenu}>Courses</Link>
             <Link to="/hackathons" className="text-gray-700 hover:text-brand-purple font-medium py-2" onClick={toggleMenu}>Hackathons</Link>
             <Link to="/corporate" className="text-gray-700 hover:text-brand-purple font-medium py-2" onClick={toggleMenu}>Corporate</Link>
+            
+            {/* Blog with subcategories in mobile menu */}
+            <div className="space-y-2">
+              <Link to="/blog" className="text-gray-700 hover:text-brand-purple font-medium py-2 block" onClick={toggleMenu}>Blog</Link>
+              <div className="pl-4 space-y-2 border-l-2 border-gray-100">
+                <Link to="/blog?category=tech-trends" className="text-gray-600 hover:text-brand-purple text-sm py-1 block" onClick={toggleMenu}>Tech Trends</Link>
+                <Link to="/blog?category=tutorials" className="text-gray-600 hover:text-brand-purple text-sm py-1 block" onClick={toggleMenu}>Tutorials</Link>
+                <Link to="/blog?category=career" className="text-gray-600 hover:text-brand-purple text-sm py-1 block" onClick={toggleMenu}>Career Advice</Link>
+                <Link to="/blog?category=success-stories" className="text-gray-600 hover:text-brand-purple text-sm py-1 block" onClick={toggleMenu}>Success Stories</Link>
+              </div>
+            </div>
+            
             <Link to="/about" className="text-gray-700 hover:text-brand-purple font-medium py-2" onClick={toggleMenu}>About Us</Link>
             <Link to="/contact" className="text-gray-700 hover:text-brand-purple font-medium py-2" onClick={toggleMenu}>Contact</Link>
             <div className="flex flex-col space-y-2 pt-2">
