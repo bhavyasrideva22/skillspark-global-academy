@@ -31,6 +31,7 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <Link to="/" className="text-gray-700 hover:text-brand-purple font-medium">Home</Link>
           <Link to="/courses" className="text-gray-700 hover:text-brand-purple font-medium">Courses</Link>
+          <Link to="/workshops" className="text-gray-700 hover:text-brand-purple font-medium">Workshops</Link>
           <Link to="/hackathons" className="text-gray-700 hover:text-brand-purple font-medium">Hackathons</Link>
           <Link to="/corporate" className="text-gray-700 hover:text-brand-purple font-medium">Corporate</Link>
           
@@ -79,6 +80,7 @@ const Navbar = () => {
           <nav className="flex flex-col space-y-4">
             <Link to="/" className="text-gray-700 hover:text-brand-purple font-medium py-2" onClick={toggleMenu}>Home</Link>
             <Link to="/courses" className="text-gray-700 hover:text-brand-purple font-medium py-2" onClick={toggleMenu}>Courses</Link>
+            <Link to="/workshops" className="text-gray-700 hover:text-brand-purple font-medium py-2" onClick={toggleMenu}>Workshops</Link>
             <Link to="/hackathons" className="text-gray-700 hover:text-brand-purple font-medium py-2" onClick={toggleMenu}>Hackathons</Link>
             <Link to="/corporate" className="text-gray-700 hover:text-brand-purple font-medium py-2" onClick={toggleMenu}>Corporate</Link>
             
